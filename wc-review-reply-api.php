@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/omidshabab/wc-review-reply-api
  * Description: Simple REST API for responding to WooCommerce product reviews
  * Version: 1.0.1
- * Author: Your Name
+ * Author: Omid Shabab
  * Author URI: https://omidshabab.com
  * License: GPL v2 or later
  * Text Domain: wc-review-reply-api
@@ -253,6 +253,7 @@ class WC_Review_Reply_API {
             'date' => $reply->comment_date,
             'date_gmt' => $reply->comment_date_gmt,
             'status' => $reply->comment_approved,
+            'link' => get_comment_link($reply->comment_ID),
         );
     }
 }
