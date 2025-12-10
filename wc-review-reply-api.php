@@ -582,6 +582,8 @@ class WC_Review_Reply_API {
 }
 
 // Initialize the plugin only if there are no conflicts
-if (wc_review_reply_api_can_initialize()) {
-    new WC_Review_Reply_API();
-}
+add_action('plugins_loaded', function() {
+    if (wc_review_reply_api_can_initialize()) {
+        new WC_Review_Reply_API();
+    }
+});
